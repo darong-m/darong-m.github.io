@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | (ns brain.boot)]]></title>
   <link href="http://darong-m.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://darong-m.github.io/"/>
-  <updated>2014-02-16T20:26:00+07:00</updated>
+  <updated>2014-02-16T20:29:07+07:00</updated>
   <id>http://darong-m.github.io/</id>
   <author>
     <name><![CDATA[Darong Mean]]></name>
@@ -45,12 +45,11 @@ I&rsquo;ve setup the octopress for many times today. Issues still exist:</p>
     <content type="html"><![CDATA[<p>When hosting octopress on github, just provide the google analytics track id is not enough.
 I need to edit file <em>source/_includes/google_analytics.html</em> in the source tree. I add extra line of javascript to the default script.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;em>gaq.push([&lsquo;&lt;/em>setAccount&rsquo;, &lsquo;UA-48117162-1&rsquo;]);
-</span><span class='line'>&lt;em>gaq.push([&lsquo;&lt;/em>setDomainName&rsquo;,&lsquo;github.io&rsquo;]);
-</span><span class='line'>&lt;em>gaq.push([&lsquo;&lt;/em>trackPageview&rsquo;]);</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:js %}
+<em>gaq.push([&lsquo;</em>setAccount&rsquo;, &lsquo;{{ site.google_analytics_tracking_id }}&rsquo;]);
+<em>gaq.push([&lsquo;</em>setDomainName&rsquo;,&lsquo;github.io&rsquo;]);
+<em>gaq.push([&lsquo;</em>trackPageview&rsquo;]);
+{% endcodeblock %}</p>
 ]]></content>
   </entry>
   
