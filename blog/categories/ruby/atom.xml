@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ruby | (ns brain.boot)]]></title>
+  <link href="http://darong-m.github.io/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://darong-m.github.io/"/>
+  <updated>2014-02-16T20:45:42+07:00</updated>
+  <id>http://darong-m.github.io/</id>
+  <author>
+    <name><![CDATA[Darong Mean]]></name>
+    <email><![CDATA[darong012@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Failed to build gem native extension]]></title>
+    <link href="http://darong-m.github.io/blog/2014/02/16/failed-to-build-gem-native-extension/"/>
+    <updated>2014-02-16T18:03:19+07:00</updated>
+    <id>http://darong-m.github.io/blog/2014/02/16/failed-to-build-gem-native-extension</id>
+    <content type="html"><![CDATA[<p>Steps involved</p>
+
+<ul>
+<li>Download and install 7-zip.</li>
+<li>Download the Development Kit and install it in say c:\devkit.</li>
+<li>Open a command window and type c:.</li>
+<li>Change folders by typing cd devkit.</li>
+<li>Type ruby dk.rb init to generate the config.yml file to be used later. Your installed Rubies will be listed there (only those installed by a RubyInstaller package are detected at present). This needs to be done only once.</li>
+<li>Finally type, ruby dk.rb install for DevKit enhance your installed Rubies. This needs to be done only once.</li>
+<li>Confirm your Ruby environment is correctly using the DevKit by running: gem install bson_ext &mdash;platform=ruby. It’s crucial that you include the &mdash;platform=ruby option to force RubyGems to build the native gem rather than potentially installing an incorrect binary gem.</li>
+</ul>
+
+
+<p>Fore more information, see <a href="http://rubylearning.com/blog/how-do-i-install-a-ruby-gem-with-native-extensions-on-windows/">here</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>
