@@ -6,7 +6,7 @@ comments: true
 categories: [octopress, google analytics]
 ---
 
-When hosting octorpess on github, just provide the google analytics track id is not enough.
+When hosting octopress on github, just provide the google analytics track id is not enough.
 I need to edit file *source/_includes/google_analytics.html* in the source tree. I add extra line of javascript to the default script.
 
 {% codeblock %}
