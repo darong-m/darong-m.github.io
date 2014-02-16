@@ -2,14 +2,18 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://darong-m.github.io/</loc>
-        <lastmod>2014-02-16T15:13:27+07:00</lastmod>
+        <lastmod>2014-02-16T15:22:02+07:00</lastmod>
     </url>
     <url>
         <loc>http://darong-m.github.io/robots.txt</loc>
         <lastmod>2014-02-16T15:13:27+07:00</lastmod>
     </url>
     <url>
+        <loc>http://darong-m.github.io/archives/</loc>
+        <lastmod>2014-02-16T15:22:02+07:00</lastmod>
+    </url>
+    <url>
         <loc>http://darong-m.github.io/blog/archives/</loc>
-        <lastmod>2014-02-16T15:13:28+07:00</lastmod>
+        <lastmod>2014-02-16T15:22:02+07:00</lastmod>
     </url>
 </urlset>
