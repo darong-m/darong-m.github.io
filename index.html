@@ -220,9 +220,10 @@ I need to edit file <em>source/_includes/google_analytics.html</em> in the sourc
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>_gaq.push(['_setAccount', 'UA-48117162-1']);
-</span><span class='line'>_gaq.push(['_setDomainName','github.io']);
-</span><span class='line'>_gaq.push(['_trackPageview']);</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">_gaq</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="s1">&#39;_setAccount&#39;</span><span class="p">,</span> <span class="s1">&#39;UA-48117162-1&#39;</span><span class="p">]);</span>
+</span><span class='line'><span class="nx">_gaq</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="s1">&#39;_setDomainName&#39;</span><span class="p">,</span><span class="s1">&#39;github.io&#39;</span><span class="p">]);</span>
+</span><span class='line'><span class="nx">_gaq</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="s1">&#39;_trackPageview&#39;</span><span class="p">]);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 
@@ -266,7 +267,8 @@ I need to edit file <em>source/_includes/google_analytics.html</em> in the sourc
   <div class="entry-content"><p>In short just setup the alias in my <em>.zshrc</em>.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>alias rake='noglob rake'</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nb">alias </span><span class="nv">rake</span><span class="o">=</span><span class="s1">&#39;noglob rake&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>For reference, see <a href="http://kinopyo.com/blog/escape-square-bracket-by-default-in-zsh/">here</a>.</p>

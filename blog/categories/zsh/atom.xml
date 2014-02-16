@@ -4,7 +4,7 @@
   <title><![CDATA[Category: zsh | (ns brain.boot)]]></title>
   <link href="http://darong-m.github.io/blog/categories/zsh/atom.xml" rel="self"/>
   <link href="http://darong-m.github.io/"/>
-  <updated>2014-02-16T20:29:07+07:00</updated>
+  <updated>2014-02-16T20:37:22+07:00</updated>
   <id>http://darong-m.github.io/</id>
   <author>
     <name><![CDATA[Darong Mean]]></name>
@@ -20,9 +20,9 @@
     <id>http://darong-m.github.io/blog/2014/02/16/zsh-and-square-brackets</id>
     <content type="html"><![CDATA[<p>In short just setup the alias in my <em>.zshrc</em>.</p>
 
-<p>{% codeblock lang:sh %}
-alias rake=&lsquo;noglob rake&rsquo;
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nb">alias </span><span class="nv">rake</span><span class="o">=</span>&amp;lsquo;noglob rake&amp;rsquo;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>For reference, see <a href="http://kinopyo.com/blog/escape-square-bracket-by-default-in-zsh/">here</a>.</p>
 ]]></content>

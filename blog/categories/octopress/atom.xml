@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | (ns brain.boot)]]></title>
   <link href="http://darong-m.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://darong-m.github.io/"/>
-  <updated>2014-02-16T20:29:07+07:00</updated>
+  <updated>2014-02-16T20:37:22+07:00</updated>
   <id>http://darong-m.github.io/</id>
   <author>
     <name><![CDATA[Darong Mean]]></name>
@@ -45,11 +45,13 @@ I&rsquo;ve setup the octopress for many times today. Issues still exist:</p>
     <content type="html"><![CDATA[<p>When hosting octopress on github, just provide the google analytics track id is not enough.
 I need to edit file <em>source/_includes/google_analytics.html</em> in the source tree. I add extra line of javascript to the default script.</p>
 
-<p>{% codeblock lang:js %}
-<em>gaq.push([&lsquo;</em>setAccount&rsquo;, &lsquo;{{ site.google_analytics_tracking_id }}&rsquo;]);
-<em>gaq.push([&lsquo;</em>setDomainName&rsquo;,&lsquo;github.io&rsquo;]);
-<em>gaq.push([&lsquo;</em>trackPageview&rsquo;]);
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="nx">em</span><span class="o">&gt;</span><span class="nx">gaq</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/em&gt;setAccount&amp;rsquo;, &amp;lsquo;UA-48117162-1&amp;rsquo;]);</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">em</span><span class="o">&gt;</span><span class="nx">gaq</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/em&gt;setDomainName&amp;rsquo;,&amp;lsquo;github.io&amp;rsquo;]);</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">em</span><span class="o">&gt;</span><span class="nx">gaq</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/em&gt;trackPageview&amp;rsquo;]);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   
