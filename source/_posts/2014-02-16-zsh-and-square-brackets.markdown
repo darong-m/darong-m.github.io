@@ -8,7 +8,7 @@ categories: zsh
 
 In short just setup the alias in my *.zshrc*.
 
-{% codeblock %}
+{% codeblock lang:sh %}
 alias rake='noglob rake'
 {% endcodeblock %}
 

@@ -3,7 +3,7 @@ layout: post
 title: "Failed to build gem native extension"
 date: 2014-02-16 18:03:19 +0700
 comments: true
-categories:
+categories: ruby
 ---
 
 Steps involved
