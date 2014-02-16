@@ -5,11 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Getting started with Octopress - (ns brain.boot)</title>
+  <title>Failed to build gem native extension - (ns brain.boot)</title>
   <meta name="author" content="Darong Mean">
 
   
-  <meta name="description" content="This blog has been setup many months ago, but I don&rsquo;t have time to update it. Today I decide to update it. Unfortunately, I run into a problem &hellip;">
+  <meta name="description" content="Steps involved Download and install 7-zip.
+Download the Development Kit and install it in say c:\devkit.
+Open a command window and type c:.
+Change &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://darong-m.github.io/blog/2014/02/16/getting-started-with-octopress">
+  <link rel="canonical" href="http://darong-m.github.io/blog/2014/02/16/failed-to-build-gem-native-extension">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="(ns brain.boot)" type="application/atom+xml">
@@ -79,7 +82,7 @@
   
   <header>
     
-      <h1 class="entry-title">Getting Started With Octopress</h1>
+      <h1 class="entry-title">Failed to Build Gem Native Extension</h1>
     
     
       <p class="meta">
@@ -95,7 +98,7 @@
   
 
 
-<time datetime="2014-02-16T16:02:12+07:00" pubdate data-updated="true">Feb 16<span>th</span>, 2014</time>
+<time datetime="2014-02-16T18:03:19+07:00" pubdate data-updated="true">Feb 16<span>th</span>, 2014</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -104,22 +107,20 @@
   </header>
 
 
-<div class="entry-content"><p>This blog has been setup many months ago, but I don&rsquo;t have time to update it. Today I decide to update it. Unfortunately, I run into a problem with run <em>rake deploy</em>. It always reject the request to push to master branch.
-I&rsquo;ve setup the octopress for many times today. Issues still exist:</p>
+<div class="entry-content"><p>Steps involved</p>
 
 <ul>
-<li>How to change git url for the blog</li>
-<li>Make codeblock work when setting language</li>
+<li>Download and install 7-zip.</li>
+<li>Download the Development Kit and install it in say c:\devkit.</li>
+<li>Open a command window and type c:.</li>
+<li>Change folders by typing cd devkit.</li>
+<li>Type ruby dk.rb init to generate the config.yml file to be used later. Your installed Rubies will be listed there (only those installed by a RubyInstaller package are detected at present). This needs to be done only once.</li>
+<li>Finally type, ruby dk.rb install for DevKit enhance your installed Rubies. This needs to be done only once.</li>
+<li>Confirm your Ruby environment is correctly using the DevKit by running: gem install bson_ext &mdash;platform=ruby. It’s crucial that you include the &mdash;platform=ruby option to force RubyGems to build the native gem rather than potentially installing an incorrect binary gem.</li>
 </ul>
 
 
-<p>It may be because I am not familiar with Octopress itself. Hope to find a solution soon.</p>
-
-<ul>
-<li><p>At last, I find a guide to setup octopress in Windows. <a href="http://blog.zerosharp.com/setting-up-octopress-on-windows-again/">Link</a> here. In the same time, it also describes how to solve issue with codeblock.</p></li>
-<li><p>Gem::RemoteFetcher::FetchError: SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (<a href="https://rubygems.org/gems/rake-0.9.6.gem">https://rubygems.org/gems/rake-0.9.6.gem</a>). <a href="https://gist.github.com/fnichol/867550">Link</a> to solve this issue. It seems I have to add environment variable through control panel to fix this issue.</p></li>
-</ul>
-
+<p>Fore more information, see <a href="http://rubylearning.com/blog/how-do-i-install-a-ruby-gem-with-native-extensions-on-windows/">here</a>.</p>
 </div>
 
 
@@ -142,21 +143,15 @@ I&rsquo;ve setup the octopress for many times today. Issues still exist:</p>
   
 
 
-<time datetime="2014-02-16T16:02:12+07:00" pubdate data-updated="true">Feb 16<span>th</span>, 2014</time>
+<time datetime="2014-02-16T18:03:19+07:00" pubdate data-updated="true">Feb 16<span>th</span>, 2014</time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/octopress/'>octopress</a>
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://darong-m.github.io/blog/2014/02/16/getting-started-with-octopress/" data-via="darong_m" data-counturl="http://darong-m.github.io/blog/2014/02/16/getting-started-with-octopress/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://darong-m.github.io/blog/2014/02/16/failed-to-build-gem-native-extension/" data-via="darong_m" data-counturl="http://darong-m.github.io/blog/2014/02/16/failed-to-build-gem-native-extension/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -169,10 +164,8 @@ I&rsquo;ve setup the octopress for many times today. Issues still exist:</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/02/16/octopress-and-google-analytics/" title="Previous Post: Octopress and google analytics">&laquo; Octopress and google analytics</a>
+        <a class="basic-alignment left" href="/blog/2014/02/16/getting-started-with-octopress/" title="Previous Post: Getting started with Octopress">&laquo; Getting started with Octopress</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/02/16/failed-to-build-gem-native-extension/" title="Next Post: Failed to build gem native extension">Failed to build gem native extension &raquo;</a>
       
     </p>
   </footer>
@@ -282,8 +275,8 @@ I&rsquo;ve setup the octopress for many times today. Issues still exist:</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://darong-m.github.io/blog/2014/02/16/getting-started-with-octopress/';
-        var disqus_url = 'http://darong-m.github.io/blog/2014/02/16/getting-started-with-octopress/';
+        var disqus_identifier = 'http://darong-m.github.io/blog/2014/02/16/failed-to-build-gem-native-extension/';
+        var disqus_url = 'http://darong-m.github.io/blog/2014/02/16/failed-to-build-gem-native-extension/';
         var disqus_script = 'embed.js';
       
     (function () {

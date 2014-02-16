@@ -4,7 +4,7 @@
   <title><![CDATA[Category: google analytics | (ns brain.boot)]]></title>
   <link href="http://darong-m.github.io/blog/categories/google-analytics/atom.xml" rel="self"/>
   <link href="http://darong-m.github.io/"/>
-  <updated>2014-02-16T16:36:08+07:00</updated>
+  <updated>2014-02-16T20:26:00+07:00</updated>
   <id>http://darong-m.github.io/</id>
   <author>
     <name><![CDATA[Darong Mean]]></name>
@@ -18,7 +18,7 @@
     <link href="http://darong-m.github.io/blog/2014/02/16/octopress-and-google-analytics/"/>
     <updated>2014-02-16T15:36:51+07:00</updated>
     <id>http://darong-m.github.io/blog/2014/02/16/octopress-and-google-analytics</id>
-    <content type="html"><![CDATA[<p>When hosting octorpess on github, just provide the google analytics track id is not enough.
+    <content type="html"><![CDATA[<p>When hosting octopress on github, just provide the google analytics track id is not enough.
 I need to edit file <em>source/_includes/google_analytics.html</em> in the source tree. I add extra line of javascript to the default script.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>

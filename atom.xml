@@ -4,7 +4,7 @@
   <title><![CDATA[(ns brain.boot)]]></title>
   <link href="http://darong-m.github.io/atom.xml" rel="self"/>
   <link href="http://darong-m.github.io/"/>
-  <updated>2014-02-16T16:36:08+07:00</updated>
+  <updated>2014-02-16T20:26:00+07:00</updated>
   <id>http://darong-m.github.io/</id>
   <author>
     <name><![CDATA[Darong Mean]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Failed to build gem native extension]]></title>
+    <link href="http://darong-m.github.io/blog/2014/02/16/failed-to-build-gem-native-extension/"/>
+    <updated>2014-02-16T18:03:19+07:00</updated>
+    <id>http://darong-m.github.io/blog/2014/02/16/failed-to-build-gem-native-extension</id>
+    <content type="html"><![CDATA[<p>Steps involved</p>
+
+<ul>
+<li>Download and install 7-zip.</li>
+<li>Download the Development Kit and install it in say c:\devkit.</li>
+<li>Open a command window and type c:.</li>
+<li>Change folders by typing cd devkit.</li>
+<li>Type ruby dk.rb init to generate the config.yml file to be used later. Your installed Rubies will be listed there (only those installed by a RubyInstaller package are detected at present). This needs to be done only once.</li>
+<li>Finally type, ruby dk.rb install for DevKit enhance your installed Rubies. This needs to be done only once.</li>
+<li>Confirm your Ruby environment is correctly using the DevKit by running: gem install bson_ext &mdash;platform=ruby. It’s crucial that you include the &mdash;platform=ruby option to force RubyGems to build the native gem rather than potentially installing an incorrect binary gem.</li>
+</ul>
+
+
+<p>Fore more information, see <a href="http://rubylearning.com/blog/how-do-i-install-a-ruby-gem-with-native-extensions-on-windows/">here</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Getting started with Octopress]]></title>
@@ -28,6 +50,12 @@ I&rsquo;ve setup the octopress for many times today. Issues still exist:</p>
 
 
 <p>It may be because I am not familiar with Octopress itself. Hope to find a solution soon.</p>
+
+<ul>
+<li><p>At last, I find a guide to setup octopress in Windows. <a href="http://blog.zerosharp.com/setting-up-octopress-on-windows-again/">Link</a> here. In the same time, it also describes how to solve issue with codeblock.</p></li>
+<li><p>Gem::RemoteFetcher::FetchError: SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (<a href="https://rubygems.org/gems/rake-0.9.6.gem">https://rubygems.org/gems/rake-0.9.6.gem</a>). <a href="https://gist.github.com/fnichol/867550">Link</a> to solve this issue. It seems I have to add environment variable through control panel to fix this issue.</p></li>
+</ul>
+
 ]]></content>
   </entry>
   
@@ -36,7 +64,7 @@ I&rsquo;ve setup the octopress for many times today. Issues still exist:</p>
     <link href="http://darong-m.github.io/blog/2014/02/16/octopress-and-google-analytics/"/>
     <updated>2014-02-16T15:36:51+07:00</updated>
     <id>http://darong-m.github.io/blog/2014/02/16/octopress-and-google-analytics</id>
-    <content type="html"><![CDATA[<p>When hosting octorpess on github, just provide the google analytics track id is not enough.
+    <content type="html"><![CDATA[<p>When hosting octopress on github, just provide the google analytics track id is not enough.
 I need to edit file <em>source/_includes/google_analytics.html</em> in the source tree. I add extra line of javascript to the default script.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
