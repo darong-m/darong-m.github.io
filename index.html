@@ -9,7 +9,7 @@
   <meta name="author" content="Darong Mean">
 
   
-  <meta name="description" content="Blog Archives Recent Posts GitHub Repos Status updating&#8230; @darong-m on GitHub $(document).ready(function(){ if (!window.jXHR){ var jxhr = &hellip;">
+  <meta name="description" content="This blog has been setup many months ago, but I don&rsquo;t have time to update it. Today I decide to update it. Unfortunately, I run into a problem &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,140 @@
       <div class="blog-index">
   
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/16/getting-started-with-octopress/">Getting Started With Octopress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-16T16:02:12+07:00" pubdate data-updated="true">Feb 16<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This blog has been setup many months ago, but I don&rsquo;t have time to update it. Today I decide to update it. Unfortunately, I run into a problem with run <em>rake deploy</em>. It always reject the request to push to master branch.
+I&rsquo;ve setup the octopress for many times today. Issues still exist:</p>
+
+<ul>
+<li>How to change git url for the blog</li>
+<li>Make codeblock work when setting language</li>
+</ul>
+
+
+<p>It may be because I am not familiar with Octopress itself. Hope to find a solution soon.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/16/octopress-and-google-analytics/">Octopress and Google Analytics</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-16T15:36:51+07:00" pubdate data-updated="true">Feb 16<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>When hosting octorpess on github, just provide the google analytics track id is not enough.
+I need to edit file <em>source/_includes/google_analytics.html</em> in the source tree. I add extra line of javascript to the default script.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>_gaq.push(['_setAccount', 'UA-48117162-1']);
+</span><span class='line'>_gaq.push(['_setDomainName','github.io']);
+</span><span class='line'>_gaq.push(['_trackPageview']);</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/16/zsh-and-square-brackets/">ZSH and Square Brackets</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-16T15:35:48+07:00" pubdate data-updated="true">Feb 16<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In short just setup the alias in my <em>.zshrc</em>.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>alias rake='noglob rake'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>For reference, see <a href="http://kinopyo.com/blog/escape-square-bracket-by-default-in-zsh/">here</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
     <a href="/blog/archives">Blog Archives</a>
@@ -98,6 +232,18 @@
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/02/16/getting-started-with-octopress/">Getting Started With Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/16/octopress-and-google-analytics/">Octopress and Google Analytics</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/16/zsh-and-square-brackets/">ZSH and Square Brackets</a>
+      </li>
     
   </ul>
 </section>

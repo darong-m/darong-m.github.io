@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: google analytics | (ns brain.boot)]]></title>
+  <link href="http://darong-m.github.io/blog/categories/google-analytics/atom.xml" rel="self"/>
+  <link href="http://darong-m.github.io/"/>
+  <updated>2014-02-16T16:15:25+07:00</updated>
+  <id>http://darong-m.github.io/</id>
+  <author>
+    <name><![CDATA[Darong Mean]]></name>
+    <email><![CDATA[darong012@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress and google analytics]]></title>
+    <link href="http://darong-m.github.io/blog/2014/02/16/octopress-and-google-analytics/"/>
+    <updated>2014-02-16T15:36:51+07:00</updated>
+    <id>http://darong-m.github.io/blog/2014/02/16/octopress-and-google-analytics</id>
+    <content type="html"><![CDATA[<p>When hosting octorpess on github, just provide the google analytics track id is not enough.
+I need to edit file <em>source/_includes/google_analytics.html</em> in the source tree. I add extra line of javascript to the default script.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;em>gaq.push([&lsquo;&lt;/em>setAccount&rsquo;, &lsquo;UA-48117162-1&rsquo;]);
+</span><span class='line'>&lt;em>gaq.push([&lsquo;&lt;/em>setDomainName&rsquo;,&lsquo;github.io&rsquo;]);
+</span><span class='line'>&lt;em>gaq.push([&lsquo;&lt;/em>trackPageview&rsquo;]);</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>

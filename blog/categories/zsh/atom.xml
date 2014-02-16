@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: zsh | (ns brain.boot)]]></title>
+  <link href="http://darong-m.github.io/blog/categories/zsh/atom.xml" rel="self"/>
+  <link href="http://darong-m.github.io/"/>
+  <updated>2014-02-16T16:15:25+07:00</updated>
+  <id>http://darong-m.github.io/</id>
+  <author>
+    <name><![CDATA[Darong Mean]]></name>
+    <email><![CDATA[darong012@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ZSH and square brackets]]></title>
+    <link href="http://darong-m.github.io/blog/2014/02/16/zsh-and-square-brackets/"/>
+    <updated>2014-02-16T15:35:48+07:00</updated>
+    <id>http://darong-m.github.io/blog/2014/02/16/zsh-and-square-brackets</id>
+    <content type="html"><![CDATA[<p>In short just setup the alias in my <em>.zshrc</em>.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>alias rake=&lsquo;noglob rake&rsquo;</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>For reference, see <a href="http://kinopyo.com/blog/escape-square-bracket-by-default-in-zsh/">here</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>
