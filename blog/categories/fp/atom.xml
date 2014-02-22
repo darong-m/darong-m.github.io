@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: fp | (ns brain.boot)]]></title>
+  <link href="http://darong-m.github.io/blog/categories/fp/atom.xml" rel="self"/>
+  <link href="http://darong-m.github.io/"/>
+  <updated>2014-02-22T19:50:38+07:00</updated>
+  <id>http://darong-m.github.io/</id>
+  <author>
+    <name><![CDATA[Darong Mean]]></name>
+    <email><![CDATA[darong012@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Why FP?]]></title>
+    <link href="http://darong-m.github.io/blog/2014/02/22/why-fp/"/>
+    <updated>2014-02-22T16:56:05+07:00</updated>
+    <id>http://darong-m.github.io/blog/2014/02/22/why-fp</id>
+    <content type="html"><![CDATA[<p>This is a note from book &ldquo;Functional Programming for Java Developers&rdquo;.</p>
+
+<h1>Why FP?</h1>
+
+<p>Author discusses the following advantages of FP:</p>
+
+<ul>
+<li>write concurrent programs.</li>
+</ul>
+
+
+<p>This is the reason I pick up and learn funtional programming. There are many patterns in FP to solve concurrency issues. So far I am impressed with solution in Clojure, core.async.</p>
+
+<ul>
+<li>most programs are just data management problems</li>
+</ul>
+
+
+<p>This value is useful in data-driven system (which most management systems are) or big-data system. FP encourage to use generic data structure like List, Map, or Tree and those data structures works with combinator functions.
+Example from the book: consider a <strong>List of email addresses for customers</strong>. I can filter for just the <strong>gmail</strong> addresses. I can map each addresses in the list to an appropriate anchor tag for displaying in a web page. I can fold over the list to group the users by domain.
+In contrast, now imagine that I wrote my own custom <strong>EmailAddresses</strong> class, for example, with one-off methods to do the filtering, mapping, and grouping I just described above. I would write a lot more code (and tests) and the special-purpose nature of that code would make the class less attractive for reuse.
+Though custom types and methods provide a self-documentation feature, for example <strong>EmailAddresses.groupUsersByDomian</strong> tells the reader exactly what&rsquo;s goining on, ther&rsquo;s a better way. I can use DSLs to represent a domain  at the upper levels of abstraction. I can have a DSL that says, <strong>groupUsersByDomain</strong> in <strong>emailAddresses</strong>, but implement it with <strong>List<EmailAddresses>.foldLeft(new HashMap&lt;&hellip;.>(), groupingFunction)</strong> where <strong>groupingFunction</strong> does the <em>group by</em> magic on the users and domains.</p>
+
+<p>I am looking at <a href="http://alistair.cockburn.us/Hexagonal+architecture">Hexagonal architecture</a>, and <a href="http://en.wikipedia.org/wiki/Entity_component_system">Entity Component System</a> to under different styles of system design regarding this issue.</p>
+
+<ul>
+<li>functional programming is more modular. How? FP moves the abstraction layers lower, to core data structures and combinator functions. It combines immutable code and side-effect-free functions.</li>
+</ul>
+
+
+<p>I think I start addicting to use combinator functions like map, reduce, etc&hellip; However, I still struggle with designing FP system.</p>
+
+<ul>
+<li>work faster; FP keeps code concise by minimizing unnecessary and &ldquo;one-off&rdquo; implementation constructs, and it keeps the code logically correct.</li>
+</ul>
+
+
+<p>Most of FP code I work with is just a toy project I create myself. I might see this value when my project grows.</p>
+
+<ul>
+<li>functional programming is a return to simplicity; the goal of minimizing implementation size and complexity by rethinking our ideas of appropriate design patterns and implementation idioms.</li>
+</ul>
+
+
+<p>This reason is very vague for me. It is a philosophy and I am not good at such a thing.</p>
+
+<h1>Basic principles of FP</h1>
+
+<ul>
+<li>immutable state</li>
+<li>functions as first-class value</li>
+<li>lambdas and closures</li>
+<li>higher-order functions</li>
+<li>side-effect free functions</li>
+<li>recursion</li>
+<li>lazy vs eager evaluation</li>
+<li>declarative vs imperative programs</li>
+<li>algebraic data type and abstract data type</li>
+</ul>
+
+
+<h2>Data Structure and Algorithm</h2>
+
+<ul>
+<li>list</li>
+<li>map</li>
+<li>combinator: filter, map, fold</li>
+<li>Persistent Data Structure</li>
+<li>Domain Specific Language (DSL)</li>
+</ul>
+
+
+<h1>Concurrency</h1>
+
+<ul>
+<li>Immutable state</li>
+<li>Actor</li>
+<li>Software Transactional Machine (STM)</li>
+<li>Communicating Sequencial Processes (not described in the book)</li>
+</ul>
+
+
+<h1>Tools to improve modularity and reuse</h1>
+
+<ul>
+<li>custom classes aren&rsquo;t always justified</li>
+<li>put your domain in domain-specific languages</li>
+<li>function combinators</li>
+<li>use more generic types</li>
+</ul>
+
+
+<h1>Better OOP</h1>
+
+<ul>
+<li>A practical way to ensure that LSP(Liskov Substitute Principle) is satisfied is to use Design by Contract. It can be hard to define properties weell. The freedom and flexibility of inheritance doesn&rsquo;t provide much guidance, but design patterns help. <strong>Template Method pattern</strong> provides useful constraint on <em>subtype polymorphism</em>. FP gives me a similiar tool, <strong>higher-order function</strong>.</li>
+<li><strong>Higher-order function</strong> and <strong>immutable state</strong> make design patterns like singleton, composite, command, and iterator obsolete in FP.</li>
+<li>FP has a feature called <strong>pattern matching</strong> that can solve the problem visitor pattern is trying to solve.</li>
+<li>Any data that fits in a collection probably should not have its own dedicated type. I can use types to represent domain concepts with stable, clear properties. Consider using maps, lists, trees, and sets to represent other domain concepts that are more fluid and imprecise.</li>
+</ul>
+
+
+<p>Other ideas to look deeper is design by contract vs tdd, and monad pattern.</p>
+]]></content>
+  </entry>
+  
+</feed>
