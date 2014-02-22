@@ -1,0 +1,81 @@
+---
+layout: post
+title: "Why FP?"
+date: 2014-02-22 16:56:05 +0700
+comments: true
+categories: fp
+---
+
+This is a note from book "Functional Programming for Java Developers".
+
+# Why FP?
+
+Author discusses the following advantages of FP:
+
+- write concurrent programs.
+
+This is the reason I pick up and learn funtional programming. There are many patterns in FP to solve concurrency issues. So far I am impressed with solution in Clojure, core.async.
+
+- most programs are just data management problems
+
+This value is useful in data-driven system (which most management systems are) or big-data system. FP encourage to use generic data structure like List, Map, or Tree and those data structures works with combinator functions.
+Example from the book: consider a **List of email addresses for customers**. I can filter for just the **gmail** addresses. I can map each addresses in the list to an appropriate anchor tag for displaying in a web page. I can fold over the list to group the users by domain.
+In contrast, now imagine that I wrote my own custom **EmailAddresses** class, for example, with one-off methods to do the filtering, mapping, and grouping I just described above. I would write a lot more code (and tests) and the special-purpose nature of that code would make the class less attractive for reuse.
+Though custom types and methods provide a self-documentation feature, for example **EmailAddresses.groupUsersByDomian** tells the reader exactly what's goining on, ther's a better way. I can use DSLs to represent a domain  at the upper levels of abstraction. I can have a DSL that says, **groupUsersByDomain** in **emailAddresses**, but implement it with **List<EmailAddresses>.foldLeft(new HashMap<....>(), groupingFunction)** where **groupingFunction** does the *group by* magic on the users and domains.
+
+I am looking at [Hexagonal architecture](http://alistair.cockburn.us/Hexagonal+architecture), and [Entity Component System](http://en.wikipedia.org/wiki/Entity_component_system) to under different styles of system design regarding this issue.
+
+- functional programming is more modular. How? FP moves the abstraction layers lower, to core data structures and combinator functions. It combines immutable code and side-effect-free functions.
+
+I think I start addicting to use combinator functions like map, reduce, etc... However, I still struggle with designing FP system.
+
+- work faster; FP keeps code concise by minimizing unnecessary and "one-off" implementation constructs, and it keeps the code logically correct.
+
+Most of FP code I work with is just a toy project I create myself. I might see this value when my project grows.
+
+- functional programming is a return to simplicity; the goal of minimizing implementation size and complexity by rethinking our ideas of appropriate design patterns and implementation idioms.
+
+This reason is very vague for me. It is a philosophy and I am not good at such a thing.
+
+# Basic principles of FP
+
+- immutable state
+- functions as first-class value
+- lambdas and closures
+- higher-order functions
+- side-effect free functions
+- recursion
+- lazy vs eager evaluation
+- declarative vs imperative programs
+- algebraic data type and abstract data type
+
+## Data Structure and Algorithm
+
+- list
+- map
+- combinator: filter, map, fold
+- Persistent Data Structure
+- Domain Specific Language (DSL)
+
+# Concurrency
+
+- Immutable state
+- Actor
+- Software Transactional Machine (STM)
+- Communicating Sequencial Processes (not described in the book)
+
+# Tools to improve modularity and reuse
+
+- custom classes aren't always justified
+- put your domain in domain-specific languages
+- function combinators
+- use more generic types
+
+# Better OOP
+
+- A practical way to ensure that LSP(Liskov Substitute Principle) is satisfied is to use Design by Contract. It can be hard to define properties weell. The freedom and flexibility of inheritance doesn't provide much guidance, but design patterns help. **Template Method pattern** provides useful constraint on *subtype polymorphism*. FP gives me a similiar tool, **higher-order function**.
+- **Higher-order function** and **immutable state** make design patterns like singleton, composite, command, and iterator obsolete in FP.
+- FP has a feature called **pattern matching** that can solve the problem visitor pattern is trying to solve.
+- Any data that fits in a collection probably should not have its own dedicated type. I can use types to represent domain concepts with stable, clear properties. Consider using maps, lists, trees, and sets to represent other domain concepts that are more fluid and imprecise.
+
+Other ideas to look deeper is design by contract vs tdd, and monad pattern.
