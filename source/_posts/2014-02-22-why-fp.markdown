@@ -8,6 +8,8 @@ categories: fp
 
 This is a note from book "Functional Programming for Java Developers".
 
+<!-- more -->
+
 # Why FP?
 
 Author discusses the following advantages of FP:
