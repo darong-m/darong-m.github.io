@@ -4,7 +4,7 @@
   <title><![CDATA[(ns brain.boot)]]></title>
   <link href="http://darong-m.github.io/atom.xml" rel="self"/>
   <link href="http://darong-m.github.io/"/>
-  <updated>2014-02-22T20:26:51+07:00</updated>
+  <updated>2014-02-22T23:52:41+07:00</updated>
   <id>http://darong-m.github.io/</id>
   <author>
     <name><![CDATA[Darong Mean]]></name>
@@ -12,6 +12,56 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Design by Contract]]></title>
+    <link href="http://darong-m.github.io/blog/2014/02/22/design-by-contract/"/>
+    <updated>2014-02-22T23:49:37+07:00</updated>
+    <id>http://darong-m.github.io/blog/2014/02/22/design-by-contract</id>
+    <content type="html"><![CDATA[<p>Note on some basic ideas with Design  by Contract principle.</p>
+
+<!-- more -->
+
+
+<h1>Definition</h1>
+
+<ul>
+<li><strong>Software System</strong> : A software system is a set of mechanisms to create, access, and change collections of information called objcts.</li>
+<li><strong>Object</strong> : An object is a software machine allowing programs to access and modify a collections of data.</li>
+<li><strong>Feature</strong> : An operation that programs may apply to an object.</li>
+<li><strong>Command</strong> : A feature that may change an object; It changes the visible properties of the object through queries.</li>
+<li><p><strong>Query</strong> : A feature that accesses an object.</p></li>
+<li><p><strong>Instruction</strong> : An instruction denotes a basic operation to be performed during the program&rsquo;s execution.</p></li>
+<li><strong>Expression</strong> : An expression denotes a value used by instruction for its execution.</li>
+<li><strong>Syntax</strong> : The syntax of a program is the structure and forms of its text.</li>
+<li><p><strong>Semantics</strong> : The semantics of a program is the set of properties of its potential executions.</p></li>
+<li><p><strong>Client</strong> : A client of a software mechanism is a system of any kind, such as a software element, a non-software system, or a human user, that uses it. For its clients, the mechanism is a <strong>supplier</strong> .</p></li>
+<li><p><strong>Interface</strong> : An interface of a set of software mechanisms is the description of techniques enabling clients to use these mechanisms.</p></li>
+<li><p><strong>Class</strong> : A class is the description of a set of possible run-time objects to which the same features are applicable.
+Classes are static and objects are dynamic.</p></li>
+<li><p><strong>Contract</strong> : A contract is a specification of properties of a software element that affect its use by potential clients.</p></li>
+<li><p><strong>Information Hiding</strong> : Information hiding is the mechanism separating interface information from implementation details, and enabling clients to use routines and other software elements on the basis of the interface only.</p></li>
+</ul>
+
+
+<h1>Concept</h1>
+
+<p>Finding appropriate classes is a central part of the task of of software <strong>design</strong>, devoting to organizing the essential <strong>structure</strong>, or <strong>architecture</strong>, of a program as opposed to writing down the details, or <strong>implementation</strong>.</p>
+
+<p>To find good classess, we search the problem domain for concepts that:</p>
+
+<ul>
+<li>describe sets of objects(their future instances).</li>
+<li>can be explained clearly.</li>
+<li>can be characterized in terms of clearly defined <em>features</em>, including both queries and commands, applicable to the corresponding objects.</li>
+</ul>
+
+
+<p>A client calling a feature must make sure that the <strong>precondition</strong> holds before the call.
+A feature must make sure that if its precondition held at the beginning of its execution, its <strong>postcondition</strong> will hold at the end.
+A <strong>clas invariant</strong> must hold as soon as an object is created, then before and after execution of any of the class features available to clients.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Why FP?]]></title>

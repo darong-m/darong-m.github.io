@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Why FP? - (ns brain.boot)</title>
+  <title>Design by Contract - (ns brain.boot)</title>
   <meta name="author" content="Darong Mean">
 
   
-  <meta name="description" content="This is a note from book &ldquo;Functional Programming for Java Developers&rdquo;. Why FP? Author discusses the following advantages of FP: write &hellip;">
+  <meta name="description" content="Note on some basic ideas with Design by Contract principle. Definition Software System : A software system is a set of mechanisms to create, access, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://darong-m.github.io/blog/2014/02/22/why-fp">
+  <link rel="canonical" href="http://darong-m.github.io/blog/2014/02/22/design-by-contract">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="(ns brain.boot)" type="application/atom+xml">
@@ -79,7 +79,7 @@
   
   <header>
     
-      <h1 class="entry-title">Why FP?</h1>
+      <h1 class="entry-title">Design by Contract</h1>
     
     
       <p class="meta">
@@ -95,7 +95,7 @@
   
 
 
-<time datetime="2014-02-22T16:56:05+07:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2014</time>
+<time datetime="2014-02-22T23:49:37+07:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2014</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -104,112 +104,48 @@
   </header>
 
 
-<div class="entry-content"><p>This is a note from book &ldquo;Functional Programming for Java Developers&rdquo;.</p>
+<div class="entry-content"><p>Note on some basic ideas with Design  by Contract principle.</p>
 
 <!-- more -->
 
 
-<h1>Why FP?</h1>
-
-<p>Author discusses the following advantages of FP:</p>
+<h1>Definition</h1>
 
 <ul>
-<li>write concurrent programs.</li>
+<li><strong>Software System</strong> : A software system is a set of mechanisms to create, access, and change collections of information called objcts.</li>
+<li><strong>Object</strong> : An object is a software machine allowing programs to access and modify a collections of data.</li>
+<li><strong>Feature</strong> : An operation that programs may apply to an object.</li>
+<li><strong>Command</strong> : A feature that may change an object; It changes the visible properties of the object through queries.</li>
+<li><p><strong>Query</strong> : A feature that accesses an object.</p></li>
+<li><p><strong>Instruction</strong> : An instruction denotes a basic operation to be performed during the program&rsquo;s execution.</p></li>
+<li><strong>Expression</strong> : An expression denotes a value used by instruction for its execution.</li>
+<li><strong>Syntax</strong> : The syntax of a program is the structure and forms of its text.</li>
+<li><p><strong>Semantics</strong> : The semantics of a program is the set of properties of its potential executions.</p></li>
+<li><p><strong>Client</strong> : A client of a software mechanism is a system of any kind, such as a software element, a non-software system, or a human user, that uses it. For its clients, the mechanism is a <strong>supplier</strong> .</p></li>
+<li><p><strong>Interface</strong> : An interface of a set of software mechanisms is the description of techniques enabling clients to use these mechanisms.</p></li>
+<li><p><strong>Class</strong> : A class is the description of a set of possible run-time objects to which the same features are applicable.
+Classes are static and objects are dynamic.</p></li>
+<li><p><strong>Contract</strong> : A contract is a specification of properties of a software element that affect its use by potential clients.</p></li>
+<li><p><strong>Information Hiding</strong> : Information hiding is the mechanism separating interface information from implementation details, and enabling clients to use routines and other software elements on the basis of the interface only.</p></li>
 </ul>
 
 
-<p>This is the reason I pick up and learn funtional programming. There are many patterns in FP to solve concurrency issues. So far I am impressed with solution in Clojure, core.async.</p>
+<h1>Concept</h1>
+
+<p>Finding appropriate classes is a central part of the task of of software <strong>design</strong>, devoting to organizing the essential <strong>structure</strong>, or <strong>architecture</strong>, of a program as opposed to writing down the details, or <strong>implementation</strong>.</p>
+
+<p>To find good classess, we search the problem domain for concepts that:</p>
 
 <ul>
-<li>most programs are just data management problems</li>
+<li>describe sets of objects(their future instances).</li>
+<li>can be explained clearly.</li>
+<li>can be characterized in terms of clearly defined <em>features</em>, including both queries and commands, applicable to the corresponding objects.</li>
 </ul>
 
 
-<p>This value is useful in data-driven system (which most management systems are) or big-data system. FP encourage to use generic data structure like List, Map, or Tree and those data structures works with combinator functions.
-Example from the book: consider a <strong>List of email addresses for customers</strong>. I can filter for just the <strong>gmail</strong> addresses. I can map each addresses in the list to an appropriate anchor tag for displaying in a web page. I can fold over the list to group the users by domain.
-In contrast, now imagine that I wrote my own custom <strong>EmailAddresses</strong> class, for example, with one-off methods to do the filtering, mapping, and grouping I just described above. I would write a lot more code (and tests) and the special-purpose nature of that code would make the class less attractive for reuse.
-Though custom types and methods provide a self-documentation feature, for example <strong>EmailAddresses.groupUsersByDomian</strong> tells the reader exactly what&rsquo;s goining on, ther&rsquo;s a better way. I can use DSLs to represent a domain  at the upper levels of abstraction. I can have a DSL that says, <strong>groupUsersByDomain</strong> in <strong>emailAddresses</strong>, but implement it with <strong>List<EmailAddresses>.foldLeft(new HashMap&lt;&hellip;.>(), groupingFunction)</strong> where <strong>groupingFunction</strong> does the <em>group by</em> magic on the users and domains.</p>
-
-<p>I am looking at <a href="http://alistair.cockburn.us/Hexagonal+architecture">Hexagonal architecture</a>, and <a href="http://en.wikipedia.org/wiki/Entity_component_system">Entity Component System</a> to under different styles of system design regarding this issue.</p>
-
-<ul>
-<li>functional programming is more modular. How? FP moves the abstraction layers lower, to core data structures and combinator functions. It combines immutable code and side-effect-free functions.</li>
-</ul>
-
-
-<p>I think I start addicting to use combinator functions like map, reduce, etc&hellip; However, I still struggle with designing FP system.</p>
-
-<ul>
-<li>work faster; FP keeps code concise by minimizing unnecessary and &ldquo;one-off&rdquo; implementation constructs, and it keeps the code logically correct.</li>
-</ul>
-
-
-<p>Most of FP code I work with is just a toy project I create myself. I might see this value when my project grows.</p>
-
-<ul>
-<li>functional programming is a return to simplicity; the goal of minimizing implementation size and complexity by rethinking our ideas of appropriate design patterns and implementation idioms.</li>
-</ul>
-
-
-<p>This reason is very vague for me. It is a philosophy and I am not good at such a thing.</p>
-
-<h1>Basic principles of FP</h1>
-
-<ul>
-<li>immutable state</li>
-<li>functions as first-class value</li>
-<li>lambdas and closures</li>
-<li>higher-order functions</li>
-<li>side-effect free functions</li>
-<li>recursion</li>
-<li>lazy vs eager evaluation</li>
-<li>declarative vs imperative programs</li>
-<li>algebraic data type and abstract data type</li>
-</ul>
-
-
-<h2>Data Structure and Algorithm</h2>
-
-<ul>
-<li>list</li>
-<li>map</li>
-<li>combinator: filter, map, fold</li>
-<li>Persistent Data Structure</li>
-<li>Domain Specific Language (DSL)</li>
-</ul>
-
-
-<h1>Concurrency</h1>
-
-<ul>
-<li>Immutable state</li>
-<li>Actor</li>
-<li>Software Transactional Machine (STM)</li>
-<li>Communicating Sequencial Processes (not described in the book)</li>
-</ul>
-
-
-<h1>Tools to improve modularity and reuse</h1>
-
-<ul>
-<li>custom classes aren&rsquo;t always justified</li>
-<li>put your domain in domain-specific languages</li>
-<li>function combinators</li>
-<li>use more generic types</li>
-</ul>
-
-
-<h1>Better OOP</h1>
-
-<ul>
-<li>A practical way to ensure that LSP(Liskov Substitute Principle) is satisfied is to use Design by Contract. It can be hard to define properties weell. The freedom and flexibility of inheritance doesn&rsquo;t provide much guidance, but design patterns help. <strong>Template Method pattern</strong> provides useful constraint on <em>subtype polymorphism</em>. FP gives me a similiar tool, <strong>higher-order function</strong>.</li>
-<li><strong>Higher-order function</strong> and <strong>immutable state</strong> make design patterns like singleton, composite, command, and iterator obsolete in FP.</li>
-<li>FP has a feature called <strong>pattern matching</strong> that can solve the problem visitor pattern is trying to solve.</li>
-<li>Any data that fits in a collection probably should not have its own dedicated type. I can use types to represent domain concepts with stable, clear properties. Consider using maps, lists, trees, and sets to represent other domain concepts that are more fluid and imprecise.</li>
-</ul>
-
-
-<p>Other ideas to look deeper is design by contract vs tdd, and monad pattern.</p>
+<p>A client calling a feature must make sure that the <strong>precondition</strong> holds before the call.
+A feature must make sure that if its precondition held at the beginning of its execution, its <strong>postcondition</strong> will hold at the end.
+A <strong>clas invariant</strong> must hold as soon as an object is created, then before and after execution of any of the class features available to clients.</p>
 </div>
 
 
@@ -232,12 +168,12 @@ Though custom types and methods provide a self-documentation feature, for exampl
   
 
 
-<time datetime="2014-02-22T16:56:05+07:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2014</time>
+<time datetime="2014-02-22T23:49:37+07:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/fp/'>fp</a>
+    <a class='category' href='/blog/categories/design-by-contract/'>design by contract</a>
   
 </span>
 
@@ -246,7 +182,7 @@ Though custom types and methods provide a self-documentation feature, for exampl
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://darong-m.github.io/blog/2014/02/22/why-fp/" data-via="darong_m" data-counturl="http://darong-m.github.io/blog/2014/02/22/why-fp/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://darong-m.github.io/blog/2014/02/22/design-by-contract/" data-via="darong_m" data-counturl="http://darong-m.github.io/blog/2014/02/22/design-by-contract/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -259,10 +195,8 @@ Though custom types and methods provide a self-documentation feature, for exampl
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/02/16/failed-to-build-gem-native-extension/" title="Previous Post: Failed to build gem native extension">&laquo; Failed to build gem native extension</a>
+        <a class="basic-alignment left" href="/blog/2014/02/22/why-fp/" title="Previous Post: Why FP?">&laquo; Why FP?</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/02/22/design-by-contract/" title="Next Post: Design by Contract">Design by Contract &raquo;</a>
       
     </p>
   </footer>
@@ -376,8 +310,8 @@ Though custom types and methods provide a self-documentation feature, for exampl
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://darong-m.github.io/blog/2014/02/22/why-fp/';
-        var disqus_url = 'http://darong-m.github.io/blog/2014/02/22/why-fp/';
+        var disqus_identifier = 'http://darong-m.github.io/blog/2014/02/22/design-by-contract/';
+        var disqus_url = 'http://darong-m.github.io/blog/2014/02/22/design-by-contract/';
         var disqus_script = 'embed.js';
       
     (function () {
